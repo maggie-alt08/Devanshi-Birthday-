@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Devanshi ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffb199);
+    min-height:100vh;
+    color:white;
+    text-align:center;
+}
+
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    font-size:24px;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.glow{
+    font-size:clamp(2.2rem,7vw,4.5rem);
+    text-shadow:0 0 15px rgba(255,255,255,.8);
+    margin-bottom:20px;
+}
+
+.subtitle{
+    font-size:1.1rem;
+    opacity:.95;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:white;
+    color:#ff4f87;
+    border:none;
+    padding:16px 34px;
+    border-radius:40px;
+    font-size:1.1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+.hidden{
+    display:none;
+}
+
+.section{
+    max-width:900px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.card{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+#typewriter{
+    min-height:180px;
+    font-size:1.25rem;
+    line-height:1.8;
+}
+
+.slideshow{
+    margin-top:30px;
+}
+
+.slide{
+    display:none;
+}
+
+.slide img{
+    width:100%;
+    max-width:450px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.active{
+    display:block;
+    animation:fade 1s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.final{
+    font-size:1.5rem;
+    line-height:1.8;
+    margin-top:30px;
+}
+
+.signature{
+    margin-top:20px;
+    font-size:1.2rem;
+}
+
+.bounce{
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,20%,50%,80%,100%{
+        transform:translateY(0);
+    }
+    40%{
+        transform:translateY(-10px);
+    }
+    60%{
+        transform:translateY(-5px);
+    }
+}
+</style>
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<section class="hero">
+    <h1 class="glow">🎂 Happy Birthday Devanshi ❤️</h1>
+    <p class="subtitle">
+        A small surprise made especially for you ✨
+    </p>
+
+    <button class="btn bounce" onclick="openSurprise()">
+        🎁 Open Surprise
+    </button>
+</section>
+
+<section id="surprise" class="section hidden">
+
+    <div class="card">
+        <h2>💌 A Message For You</h2>
+        <br>
+        <p id="typewriter"></p>
+    </div>
+
+    <div class="slideshow">
+        <h2 style="margin-bottom:20px;">📸 Our Memories</h2>
+
+        <div class="slide active">
+            <img src="photo1.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="photo2.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="photo3.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="photo4.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:40px;">
+        <div class="final">
+            🎉 Happy Birthday, Devanshi! 🎉<br><br>
+
+            May your life be filled with happiness,
+            success, laughter and beautiful memories.
+            Keep smiling, keep shining, and keep being
+            the amazing person you are. 💖✨
+        </div>
+
+        <div class="signature">
+            With lots of love ❤️
+        </div>
+    </div>
+
+</section>
+
+<!-- Optional Music -->
+<audio id="music" loop>
+    <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const message =
+`Dear Devanshi ❤️
+
+Today is all about celebrating you.
+
+Thank you for being such an amazing friend,
+for all the laughter, random conversations,
+inside jokes, and unforgettable memories.
+
+You make ordinary days feel special.
+
+Thank you for tolerating my nonsense 😂
+and for always being there when it matters.
+
+I hope this year brings you happiness,
+success, love, peace, and countless reasons
+to smile.
+
+You deserve the very best.
+
+Happy Birthday, Devanshi! 🎂✨`;
+
+function openSurprise(){
+
+    document.getElementById('surprise')
+        .classList.remove('hidden');
+
+    document.getElementById('surprise')
+        .scrollIntoView({behavior:'smooth'});
+
+    document.getElementById('music').play();
+
+    typeWriter();
+}
+
+let started=false;
+
+function typeWriter(){
+
+    if(started) return;
+    started=true;
+
+    let i=0;
+    const speed=40;
+    const target=document.getElementById('typewriter');
+
+    function typing(){
+        if(i<message.length){
+            target.innerHTML +=
+                message.charAt(i) === '\n'
+                ? '<br>'
+                : message.charAt(i);
+
+            i++;
+            setTimeout(typing,speed);
+        }
+    }
+
+    typing();
+}
+
+let slideIndex=0;
+
+setInterval(()=>{
+    const slides=document.querySelectorAll('.slide');
+
+    slides.forEach(s=>s.classList.remove('active'));
+
+    slideIndex++;
+
+    if(slideIndex>=slides.length){
+        slideIndex=0;
+    }
+
+    slides[slideIndex].classList.add('active');
+
+},3000);
+
+function createHeart(){
+
+    const heart=document.createElement('div');
+
+    heart.classList.add('heart');
+    heart.innerHTML='❤️';
+
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.animationDuration=
+        (4+Math.random()*4)+'s';
+
+    document.getElementById('hearts')
+        .appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+  </html>
