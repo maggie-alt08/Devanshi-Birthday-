@@ -14,25 +14,6 @@
 }
 
 body{
-    <div id="lockScreen" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;">
-    <h1>🔐 Secret Birthday Card</h1>
-    <p>Enter the password to unlock Devanshi's surprise 💖</p>
-
-    <input
-        type="password"
-        id="password"
-        placeholder="Enter Password"
-        style="padding:12px;border:none;border-radius:10px;width:250px;font-size:16px;"
-    >
-
-    <button onclick="checkPassword()" style="margin-top:15px;padding:12px 25px;border:none;border-radius:30px;">
-        Unlock 🎁
-    </button>
-
-    <p id="error" style="margin-top:10px;color:#fff;"></p>
-</div>
-
-<div id="mainContent" style="display:none;">
     overflow-x:hidden;
     background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffb199);
     min-height:100vh;
@@ -180,6 +161,26 @@ body{
 </style>
 </head>
 <body>
+    <div id="lockScreen" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;">
+    <h1>🔐 Secret Birthday Card</h1>
+    <p>Enter the password to unlock Devanshi's surprise 💖</p>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+        style="padding:12px;border:none;border-radius:10px;width:250px;font-size:16px;"
+    >
+
+    <button onclick="checkPassword()" style="margin-top:15px;padding:12px 25px;border:none;border-radius:30px;">
+        Unlock 🎁
+    </button>
+
+    <p id="error" style="margin-top:10px;color:#fff;"></p>
+</div>
+
+<div id="mainContent" style="display:none;">
+    
 
 <div id="hearts"></div>
 
