@@ -203,17 +203,6 @@ body{
         <p id="typewriter"></p>
     </div>
 
-    
-
-        <div class="slide">
-            <img src="photo3.jpg" alt="">
-        </div>
-
-        <div class="slide">
-            <img src="photo4.jpg" alt="">
-        </div>
-    </div>
-
     <div class="card" style="margin-top:40px;">
         <div class="final">
             🎉 Happy Birthday,Bestieee! 🎉<br><br>
@@ -300,23 +289,6 @@ function typeWriter(){
 
     typing();
 }
-
-let slideIndex=0;
-
-setInterval(()=>{
-    const slides=document.querySelectorAll('.slide');
-
-    slides.forEach(s=>s.classList.remove('active'));
-
-    slideIndex++;
-
-    if(slideIndex>=slides.length){
-        slideIndex=0;
-    }
-
-    slides[slideIndex].classList.add('active');
-
-},3000);
 
 function createHeart(){
 
